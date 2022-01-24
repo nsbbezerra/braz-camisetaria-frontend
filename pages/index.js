@@ -112,10 +112,10 @@ export default function Home({ info }) {
       </ContainerNonFixed>
       <Container maxW={"6xl"}>
         <Box mt={10} textAlign="center">
-          <Heading color="blue.500">VEJA NOSSOS MODELOS</Heading>
-          <Text>
-            Uniformes para diferentes utilidades, Escolha o que melhor lhe
-            atender
+          <Heading color="blue.500">CONFIRA NOSSOS PRODUTOS</Heading>
+          <Text color="blue.500" fontSize={["xs", "sm", "sm", "sm", "sm"]}>
+            UNIFORMES PARA DIFERENTES UTILIDADES, ESCOLHA O QUE MELHOR LHE
+            ATENDER
           </Text>
         </Box>
 
@@ -185,236 +185,96 @@ export default function Home({ info }) {
           )}
         </Grid>
       </Container>
-      <Box>
-        <Box
-          backgroundImage={`url(/img/middle-web.png)`}
-          backgroundSize="cover"
-          backgroundRepeat="no-repeat"
-          mt={20}
-          backgroundPosition="bottom"
-        >
-          <Flex align="center" justify="center">
-            <Image src="/img/text-web.png" width={600} height={130} />
-          </Flex>
+      <Box
+        bgGradient="linear(to-l, blue.500, blue.900)"
+        mt={20}
+        backgroundPosition="bottom"
+        p={[5, 20, 20, 20, 20]}
+        w="100%"
+      >
+        <Container maxW={"6xl"}>
           <Center>
-            <Heading color="white" textAlign="center">
-              UNIFORME PARA EVENTOS
+            <Heading color="white" textAlign="center" fontSize={"5xl"}>
+              QUEM SOMOS
             </Heading>
           </Center>
           <Grid
-            templateColumns={[
-              "100vw",
-              "100vw",
-              "400px 1fr",
-              "500px 1fr",
-              "500px 1fr",
-            ]}
+            templateColumns={["1fr", "1fr", "1fr 1fr", "1fr 1fr", "1fr 1fr"]}
             justifyContent="center"
             maxWidth={"100%"}
+            mt={[5, 10, 10, 10, 10]}
+            gap={10}
           >
-            <Flex
-              mb={["0px", "0px", "-120px", "-120px", "-120px"]}
-              display={["none", "none", "none", "flex", "flex"]}
-            >
-              <Image
-                src="/img/camiseta-two-web.png"
-                width={500}
-                height={450}
-                objectFit="cover"
-                objectPosition="relative"
-              />
-            </Flex>
-            <Flex
-              mb={["0px", "0px", "-120px", "-120px", "-120px"]}
-              display={["none", "none", "flex", "none", "none"]}
-              align={"center"}
-              w={"100%"}
-              justify="center"
-              mt={[2, 2, 0, 0, 0]}
-            >
-              <Image
-                src="/img/camiseta-two-web.png"
-                width={400}
-                height={350}
-                objectFit="cover"
-                objectPosition="relative"
-              />
-            </Flex>
-            <Flex
-              mb={["20px", "20px", "-120px", "-120px", "-120px"]}
-              display={["flex", "flex", "none", "none", "none"]}
-              align={"center"}
-              w={"100%"}
-              justify="center"
-              mt={[2, 2, 0, 0, 0]}
-            >
-              <Image
-                src="/img/camiseta-two-web.png"
-                width={300}
-                height={250}
-                objectFit="cover"
-                objectPosition="relative"
-              />
-            </Flex>
-            <Flex align="center">
-              <Text
-                fontSize={["lg", "lg", "md", "2xl", "2xl"]}
-                fontWeight="700"
-                color="white"
-                mt={["-50px", "-50px", "-30px", "-50px", "-50px"]}
-                textAlign="justify"
-                mb={[20, 20, 10, 0, 0]}
-                p={[7, 7, 7, 10, 10]}
-              >
-                Somos a palmieri uniformes empresa criada no ano de 2016
-                trabalhamos para levar qualidade com preço justo aos nossos
-                clientes, buscamos sempre entender e aprender com cada pedido e
-                com cada um dos nossos clientes. Atendemos todo o território
-                nacional, temos os melhores parceiros que há no mercado têxtil e
-                sempre com novidades e melhorias.
+            <Flex align="center" direction={"column"} gap={5}>
+              <Text color="white" textAlign="justify">
+                A Braz Multimídia é uma empresa especializada na fabricação e
+                comercialização de uniformes.
+              </Text>
+              <Text color="white" textAlign="justify">
+                Com fábricas situadas na região de Brasília - DF, a Braz
+                Multimídia atua em todo o território brasileiro e veste diversas
+                empresas, eventos, times, alunos e etc, no país.
+              </Text>
+              <Text color="white" textAlign="justify">
+                A qualidade estampada em nossos produtos é resultado de um
+                constante trabalho de pesquisa que busca inovações, tecnologias
+                e tendências do mercado, para que, interagindo com os clientes,
+                possamos oferecer o que há de melhor em uniformes e
+                personalizados no Brasil.
               </Text>
             </Flex>
-          </Grid>
-        </Box>
-        <Grid
-          templateColumns={[
-            "100vw",
-            "100vw",
-            "45vw 45vw",
-            "45vw 45vw",
-            "45vw 45vw",
-          ]}
-          bg={
-            "linear-gradient( 180deg, rgba(255, 255, 255, 1) 0%, rgba(221, 221, 221, 1) 100% )"
-          }
-          justifyContent="center"
-        >
-          <Box display="flex" alignItems="center" flexDirection="column" p={10}>
-            <Box w={"100%"} pr={[2, 20, 0, 0, 0]} pl={[2, 20, 0, 0, 0]}>
-              <Center>
-                <Heading
-                  mt={["5px", "5px", "85px", "85px", "85px"]}
-                  fontSize={["xl", "2xl", "xl", "2xl", "4xl"]}
-                  textAlign="center"
-                >
-                  UNIFORMES PARA ACADEMIA
-                </Heading>
-              </Center>
-              <Box>
-                <Text
-                  fontWeight="700"
-                  mt={5}
-                  fontSize={["sm", "md", "xs", "sm", "lg"]}
-                  textAlign="justify"
-                >
-                  <Icon as={FaCheck} color="green.400" mr={5} />
-                  MALHAS DESEMPENHO DRY FIT PREMIUM
-                </Text>
-                <Text
-                  fontWeight="700"
-                  fontSize={["sm", "md", "xs", "sm", "lg"]}
-                  textAlign="justify"
-                >
-                  <Icon as={FaCheck} color="green.400" mr={5} />
-                  MODELAGEM EXCLUSIVA
-                </Text>
-                <Text
-                  fontWeight="700"
-                  fontSize={["sm", "md", "xs", "sm", "lg"]}
-                  textAlign="justify"
-                >
-                  <Icon as={FaCheck} color="green.400" mr={5} />
-                  PERSONALIZADA COM SUA LOGO
-                </Text>
-                <Text
-                  fontWeight="700"
-                  fontSize={["sm", "md", "xs", "sm", "lg"]}
-                  textAlign="justify"
-                >
-                  <Icon as={FaCheck} color="green.400" mr={5} />
-                  FIBRA QUE É IMUNE A BOLORES E FUNGOS
-                </Text>
-                <Text
-                  fontWeight="700"
-                  fontSize={["sm", "md", "xs", "sm", "lg"]}
-                  textAlign="justify"
-                >
-                  <Icon as={FaCheck} color="green.400" mr={5} />
-                  COSTURA REFORÇADA
-                </Text>
-                <Text
-                  fontWeight="700"
-                  fontSize={["sm", "md", "xs", "sm", "lg"]}
-                  textAlign="justify"
-                >
-                  <Icon as={FaCheck} color="green.400" mr={5} />
-                  RESITENTE A FUROS E RASGOS
-                </Text>
-                <Text
-                  fontWeight="700"
-                  fontSize={["sm", "md", "xs", "sm", "lg"]}
-                  textAlign="justify"
-                >
-                  <Icon as={FaCheck} color="green.400" mr={5} />
-                  NÃO DESBOTA, NÃO DESFIA
-                </Text>
-                <Text
-                  fontWeight="700"
-                  fontSize={["sm", "md", "xs", "sm", "lg"]}
-                  textAlign="justify"
-                >
-                  <Icon as={FaCheck} color="green.400" mr={5} />
-                  MALHA MACIA E TOQUE SUAVE
-                </Text>
-                <Text
-                  fontWeight="700"
-                  fontSize={["sm", "md", "xs", "sm", "lg"]}
-                  textAlign="justify"
-                >
-                  <Icon as={FaCheck} color="green.400" mr={5} />
-                  EQUILÍBRIO TÉRMICO
-                </Text>
+            <Flex>
+              <Box
+                w="100%"
+                rounded={"xl"}
+                overflow={"hidden"}
+                h="min-content"
+                shadow={"dark-lg"}
+              >
+                <Image
+                  src="/img/breadcrumb.jpg"
+                  width={500}
+                  height={280}
+                  objectFit="cover"
+                  layout="responsive"
+                />
               </Box>
-              <Link passHref href="/contato">
-                <a style={{ textDecoration: "none" }}>
-                  <Button
-                    colorScheme="green"
-                    borderRadius="lg"
-                    isFullWidth
-                    size={"lg"}
-                    mt={6}
-                  >
-                    SOLICITE UM ORÇAMENTO
-                  </Button>
-                </a>
-              </Link>
-            </Box>
-          </Box>
-          <Box
-            display={["none", "none", "flex", "flex", "flex"]}
-            justifyContent="center"
-          >
-            <Image
-              src="/img/camiseta-three-web.png"
-              width={550}
-              height={450}
-              objectFit="contain"
-            />
-          </Box>
-          <Box
-            display={["flex", "flex", "none", "none", "none"]}
-            justifyContent="center"
-          >
-            <Image
-              src="/img/camiseta-three-web.png"
-              width={320}
-              height={220}
-              objectFit="contain"
-            />
-          </Box>
-        </Grid>
+            </Flex>
+          </Grid>
+        </Container>
       </Box>
-
+      <Box
+        bgGradient="linear(to-t, gray.100, white)"
+        p={[5, 20, 20, 20, 20]}
+        w="100%"
+        zIndex={"100"}
+      >
+        <Container maxW={"6xl"}>
+          <Center>
+            <Heading color="blue.500" textAlign="center" fontSize={"5xl"}>
+              NOSSA ESTRUTURA
+            </Heading>
+          </Center>
+          <Text mt={5} color={"blue.500"} textAlign={"center"} fontSize={"lg"}>
+            A Braz Multimídia orgulha-se de empregar em seus processos
+            produtivos e administrativos, tecnologias e equipamentos de ponta no
+            mercado, a fim de tornar sua operação mais rápida, ágil e
+            principalmente eficiente. Desde o primeiro contato, os dados do
+            cliente e de seu pedido são inseridos em um sistema de gestão online
+            que é acessado pela equipe interna em todos os setores.
+          </Text>
+          <Text mt={3} color={"blue.500"} textAlign={"center"} fontSize={"lg"}>
+            Desta forma, são minimizados as chances de desencontro de
+            informações e consequentemente, erros nos pedidos. Na produção o
+            cliente conta com mais tecnologia. Nossa fábrica trabalha com os
+            equipamentos mais modernos dentre os quais se destacam os de
+            impressão digital para sublimação, bordado, corte, costura e
+            serigrafia. Além disso, emprega insumos de primeira qualidade em
+            todos os componentes das peças, aliando assim, beleza e conforto em
+            todos os produtos.
+          </Text>
+        </Container>
+      </Box>
       <Container maxW="6xl">
         <Box mt={20} textAlign="center" mb={10}>
           <Heading>PORTIFÓLIO DE ARTES</Heading>
