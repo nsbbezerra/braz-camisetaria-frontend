@@ -107,7 +107,7 @@ export default function ItemCatalogo({ prods }) {
 
   const CustomTabs = (sz) => {
     return (
-      <Tabs variant="enclosed" colorScheme="yellow" borderRadius="sm" size={sz}>
+      <Tabs variant="enclosed" colorScheme="blue" borderRadius="sm" size={sz}>
         <TabList>
           <Tab p={sz === "xs" ? 2 : ""} borderRadius="lg">
             {sz === "xs" ? "" : <Icon as={RiFileTextFill} mr={2} />}
@@ -133,12 +133,7 @@ export default function ItemCatalogo({ prods }) {
             ) : (
               <>
                 {information.pr.slug.split(".").map((sl) => (
-                  <Text
-                    textAlign="justify"
-                    style={{ textIndent: "30px" }}
-                    mb={2}
-                    key={sl}
-                  >
+                  <Text textAlign="justify" mb={2} key={sl}>
                     {sl}
                   </Text>
                 ))}
@@ -290,7 +285,7 @@ export default function ItemCatalogo({ prods }) {
       </ContainerNonFixed>
 
       <Fixed>
-        <Container maxW="xl" mt={10} mb={10}>
+        <Container maxW="6xl" mt={10} mb={10}>
           <Breadcrumb
             fontSize={"md"}
             display={["none", "flex", "flex", "flex", "flex"]}
@@ -316,7 +311,9 @@ export default function ItemCatalogo({ prods }) {
           </Breadcrumb>
 
           <Box mt={10} textAlign="center" mb={10}>
-            <Heading textAlign="center">{productName}</Heading>
+            <Heading textAlign="center" color={"blue.500"}>
+              {productName}
+            </Heading>
             <Text>
               Catálogo de modelos prontos para você personalizar suas camisetas
               promocionais de acordo com a sua necessidade.
@@ -354,7 +351,7 @@ export default function ItemCatalogo({ prods }) {
                     <Button
                       size="sm"
                       variant="solid"
-                      colorScheme="yellow"
+                      colorScheme="blue"
                       mt={2}
                       p={1}
                       isFullWidth
@@ -376,8 +373,8 @@ export default function ItemCatalogo({ prods }) {
         <Box>
           <ContainerApp>
             <Fixed>
-              <Container maxW="xl" mt={10} mb={10}>
-                <Box borderWidth="1px" borderRadius="lg" p={5}>
+              <Container maxW="6xl" mt={10} mb={10}>
+                <Box p={5}>
                   <Box display={["none", "none", "block", "block", "block"]}>
                     {CustomTabs("lg", "md")}
                   </Box>
@@ -399,12 +396,11 @@ export default function ItemCatalogo({ prods }) {
         isOpen={modal}
         onClose={() => setModal(false)}
         scrollBehavior="outside"
-        size="xl"
+        size="3xl"
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Visualizar Imagem</ModalHeader>
-          <ModalCloseButton />
+          <ModalCloseButton zIndex={100} />
           <ModalBody>
             <Box>
               <Image

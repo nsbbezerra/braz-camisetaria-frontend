@@ -1,4 +1,5 @@
 import { UncontrolledCarousel } from "reactstrap";
+import { Box } from "@chakra-ui/layout";
 
 export default function Banner() {
   const items = [
@@ -22,5 +23,9 @@ export default function Banner() {
     },
   ];
 
-  return <UncontrolledCarousel items={items} style={{ zIndex: 100 }} />;
+  return (
+    <Box mt={"60px"}>
+      <UncontrolledCarousel items={items} />
+    </Box>
+  );
 }

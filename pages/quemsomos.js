@@ -60,7 +60,7 @@ export default function QuemSomos() {
         >
           <Box w={"160px"} h={"160px"} justify="center" align="center">
             <Image
-              src="/img/icone.png"
+              src="/img/logo.svg"
               width={160}
               height={160}
               layout="responsive"

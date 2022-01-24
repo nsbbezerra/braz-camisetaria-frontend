@@ -108,7 +108,7 @@ export default function Produtos({ prods }) {
     <ContainerApp>
       <ContainerNonFixed>
         <HeaderApp />
-        <Box w="100%" display="block">
+        <Box w="100%" display="block" mt={"60px"}>
           <Image
             src="/img/banner-web.png"
             layout="responsive"
@@ -164,11 +164,12 @@ export default function Produtos({ prods }) {
           >
             <Box display={["none", "none", "none", "block", "block"]}>
               <Flex
-                bg={"yellow.400"}
+                bg={"blue.500"}
                 p={3}
                 align="center"
                 borderRadius={"md"}
                 shadow="md"
+                color="white"
               >
                 <Icon as={FaTags} mr={3} />
                 <Text fontSize={"sm"} fontWeight="700">
@@ -186,7 +187,7 @@ export default function Produtos({ prods }) {
                 pl={2}
               >
                 {categories.map((cat) => (
-                  <>
+                  <Box key={cat._id}>
                     <Box
                       as={"button"}
                       display="flex"
@@ -194,13 +195,12 @@ export default function Produtos({ prods }) {
                       w="100%"
                       fontSize={"sm"}
                       h="30px"
-                      bg={"yellow.100"}
+                      bg={"blue.100"}
                       borderRadius="md"
                       pl={3}
                       pr={3}
                       onClick={(e) => handleToogle(e, cat._id)}
                       mb={2}
-                      key={cat._id}
                     >
                       <Icon as={FaTshirt} mr={2} />
                       {cat.name}
@@ -239,7 +239,7 @@ export default function Produtos({ prods }) {
                           ))}
                       </Box>
                     </Collapse>
-                  </>
+                  </Box>
                 ))}
               </Box>
             </Box>
@@ -302,7 +302,7 @@ export default function Produtos({ prods }) {
                       <Link href={`/catalogo/${ps._id}`}>
                         <Button
                           variant="solid"
-                          colorScheme="yellow"
+                          colorScheme="blue"
                           mt={1}
                           _focus={{ boxShadow: "none", outline: "none" }}
                           isFullWidth
@@ -330,9 +330,9 @@ export default function Produtos({ prods }) {
       >
         <DrawerOverlay>
           <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerHeader bg="yellow.300">
-              <Flex align="center">
+            <DrawerCloseButton color="white" />
+            <DrawerHeader bg="blue.500">
+              <Flex align="center" color={"white"}>
                 <Icon as={FaTags} fontSize={"20px"} mr={5} />
                 <Heading size="md">TODOS OS PRODUTOS</Heading>
               </Flex>
@@ -342,7 +342,7 @@ export default function Produtos({ prods }) {
               <Box>
                 <Box borderRadius="md" mt={2} pt={2} pr={2} pl={2}>
                   {categories.map((cat) => (
-                    <>
+                    <Box key={cat._id}>
                       <Box
                         as={"button"}
                         display="flex"
@@ -350,13 +350,12 @@ export default function Produtos({ prods }) {
                         w="100%"
                         fontSize={"sm"}
                         h="30px"
-                        bg={"yellow.100"}
+                        bg={"blue.100"}
                         borderRadius="md"
                         pl={3}
                         pr={3}
                         onClick={(e) => handleToogle(e, cat._id)}
                         mb={2}
-                        key={cat._id}
                       >
                         <Icon as={FaTshirt} mr={2} />
                         {cat.name}
@@ -395,7 +394,7 @@ export default function Produtos({ prods }) {
                             ))}
                         </Box>
                       </Collapse>
-                    </>
+                    </Box>
                   ))}
                 </Box>
               </Box>

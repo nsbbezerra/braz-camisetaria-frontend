@@ -1,6 +1,5 @@
 import Head from "next/head";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import { useState } from "react";
 import {
   Box,
   Button,
@@ -19,6 +18,7 @@ import {
   MenuItem,
   Collapse,
   DrawerCloseButton,
+  Container,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import {
@@ -31,35 +31,16 @@ import {
   FaTimes,
   FaTshirt,
 } from "react-icons/fa";
-import { FixedPanel } from "../styles/style";
 import Link from "next/link";
 import { BiChevronDown } from "react-icons/bi";
 
 import { useHeader } from "../context/header";
 
 export default function HeaderApp() {
-  const [display, setDisplay] = useState(0);
-  const [position, setPosition] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  const { headerItens, setHeaderItens } = useHeader();
-
-  useEffect(() => {
-    if (position < 132) {
-      setDisplay(0);
-    } else {
-      setDisplay(1);
-    }
-  }, [position]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setPosition(window.scrollY);
-    });
-  }, []);
-
-  const router = useRouter();
+  const { headerItens } = useHeader();
 
   return (
     <>
@@ -86,339 +67,177 @@ export default function HeaderApp() {
       </Head>
 
       {/** MENU NORMAL */}
-
-      <Flex
-        bg="gray.100"
+      <Box
+        bg="rgba(255,255,255,.98)"
         h="60px"
-        pr={10}
-        pl={10}
-        justify={"space-between"}
-        mb="-2px"
+        pos={"fixed"}
+        top={0}
+        right={0}
+        left={0}
+        zIndex={500}
+        shadow={"lg"}
+        borderBottomWidth={"2px"}
+        borderBottomColor={"blue.500"}
       >
-        <Flex h="60px" align="center">
-          <Box h="50px" cursor="pointer">
-            <Link href="/">
-              <Image
-                src="/img/logo.svg"
-                width={110}
-                height={45}
-                quality={100}
-              />
-            </Link>
-          </Box>
-        </Flex>
-        <Flex
-          w={"70%"}
-          h="60px"
-          justify="flex-end"
-          align="center"
-          display={["flex", "flex", "flex", "none", "none"]}
-        >
-          <IconButton
-            aria-label="Search database"
-            icon={menuOpen === false ? <FaBars /> : <FaTimes />}
-            fontSize="28px"
-            onClick={() => setMenuOpen(!menuOpen)}
-          />
-        </Flex>
-        <Flex
-          w={"70%"}
-          h="60px"
-          justify="flex-end"
-          align="center"
-          display={["none", "none", "none", "flex", "flex"]}
-        >
-          <Link href="/">
-            <Button
-              size="lg"
-              borderRadius="sm"
-              variant="ghost"
-              colorScheme="blue"
-              leftIcon={<FaHome />}
-              _focus={{
-                boxShadow: "none",
-                outline: "none",
-              }}
-              color="blue.500"
-              _hover={{ bg: "blue.500", color: "white" }}
-              fontSize="sm"
-              h="100%"
-            >
-              Início
-            </Button>
-          </Link>
-          <Menu colorScheme="yellow">
-            <MenuButton
-              as={Button}
-              size="lg"
-              borderRadius="sm"
-              variant="ghost"
-              colorScheme="blue"
-              leftIcon={<FaTags />}
-              _focus={{
-                boxShadow: "none",
-                outline: "none",
-              }}
-              color="blue.500"
-              _hover={{ bg: "blue.500", color: "white" }}
-              h="100%"
-              fontSize="sm"
-              onClick={() => {}}
-              rightIcon={<BiChevronDown />}
-            >
-              Produtos
-            </MenuButton>
-            <MenuList shadow="lg">
-              {headerItens.map((item) => (
-                <Link key={item._id} href={`/produtos/${item._id}`}>
-                  <MenuItem
-                    icon={<FaTshirt />}
-                    _hover={{
-                      bg: "blue.500",
-                      outline: "none",
-                      color: "gray.100",
-                    }}
-                    _focus={{
-                      bg: "blue.500",
-                      outline: "none",
-                      color: "gray.100",
-                    }}
-                  >
-                    {item.name}
-                  </MenuItem>
+        <Container maxW={"6xl"}>
+          <Flex pr={10} pl={10} justify={"space-between"}>
+            <Flex h="60px" align="center">
+              <Box h="50px" cursor="pointer">
+                <Link href="/">
+                  <Image
+                    src="/img/logo.svg"
+                    width={110}
+                    height={45}
+                    quality={100}
+                  />
                 </Link>
-              ))}
-            </MenuList>
-          </Menu>
-
-          <Link href="/quemsomos">
-            <Button
-              size="lg"
-              borderRadius="sm"
-              variant="ghost"
-              colorScheme="blue"
-              leftIcon={<FaInfoCircle />}
-              _focus={{
-                boxShadow: "none",
-                outline: "none",
-              }}
-              color="blue.500"
-              _hover={{ bg: "blue.500", color: "white" }}
-              h="100%"
-              fontSize="sm"
+              </Box>
+            </Flex>
+            <Flex
+              w={"70%"}
+              h="60px"
+              justify="flex-end"
+              align="center"
+              display={["flex", "flex", "flex", "none", "none"]}
             >
-              Quem Somos
-            </Button>
-          </Link>
-          <Link href={"/contato"}>
-            <Button
-              size="lg"
-              borderRadius="sm"
-              variant="ghost"
-              colorScheme="blue"
-              leftIcon={<FaPhone />}
-              _focus={{
-                boxShadow: "none",
-                outline: "none",
-              }}
-              color="blue.500"
-              _hover={{ bg: "blue.500", color: "white" }}
-              h="100%"
-              fontSize="sm"
+              <IconButton
+                aria-label="Search database"
+                icon={menuOpen === false ? <FaBars /> : <FaTimes />}
+                fontSize="28px"
+                onClick={() => setMenuOpen(!menuOpen)}
+              />
+            </Flex>
+            <Flex
+              w={"70%"}
+              h="60px"
+              justify="flex-end"
+              align="center"
+              display={["none", "none", "none", "flex", "flex"]}
             >
-              Fale Conosco
-            </Button>
-          </Link>
-          <Link href="/comofunciona">
-            <Button
-              size="lg"
-              borderRadius="sm"
-              variant="ghost"
-              colorScheme="blue"
-              leftIcon={<FaQuestionCircle />}
-              _focus={{
-                boxShadow: "none",
-                outline: "none",
-              }}
-              color="blue.500"
-              _hover={{ bg: "blue.500", color: "white" }}
-              fontSize="sm"
-              h="100%"
-            >
-              Como Funciona
-            </Button>
-          </Link>
-        </Flex>
-      </Flex>
-
-      {/** MENU FIXO */}
-
-      <FixedPanel display={display}>
-        <Flex
-          h="60px"
-          pr={10}
-          pl={10}
-          justify={"space-between"}
-          mb="-2px"
-          shadow={"lg"}
-        >
-          <Flex h="60px" align="center">
-            <Box h="50px" cursor="pointer">
               <Link href="/">
-                <Image
-                  src="/img/logo.svg"
-                  width={110}
-                  height={45}
-                  quality={100}
-                />
+                <Button
+                  size="lg"
+                  borderRadius="sm"
+                  variant="ghost"
+                  colorScheme="blue"
+                  leftIcon={<FaHome />}
+                  _focus={{
+                    boxShadow: "none",
+                    outline: "none",
+                  }}
+                  color="blue.500"
+                  _hover={{ bg: "blue.500", color: "white" }}
+                  fontSize="sm"
+                  h="100%"
+                >
+                  Início
+                </Button>
               </Link>
-            </Box>
-          </Flex>
-          <Flex
-            w={"70%"}
-            h="60px"
-            justify="flex-end"
-            align="center"
-            display={["flex", "flex", "flex", "none", "none"]}
-          >
-            <IconButton
-              aria-label="Search database"
-              icon={menuOpen === false ? <FaBars /> : <FaTimes />}
-              fontSize="28px"
-              onClick={() => setMenuOpen(!menuOpen)}
-            />
-          </Flex>
-          <Flex
-            w={"70%"}
-            h="60px"
-            justify="flex-end"
-            align="center"
-            display={["none", "none", "none", "flex", "flex"]}
-          >
-            <Link href="/">
-              <Button
-                size="lg"
-                borderRadius="sm"
-                variant="ghost"
-                colorScheme="blue"
-                leftIcon={<FaHome />}
-                _focus={{
-                  boxShadow: "none",
-                  outline: "none",
-                }}
-                color="blue.500"
-                _hover={{ bg: "blue.500", color: "white" }}
-                fontSize="sm"
-                h="100%"
-              >
-                Início
-              </Button>
-            </Link>
-            <Menu colorScheme="yellow">
-              <MenuButton
-                as={Button}
-                size="lg"
-                borderRadius="sm"
-                variant="ghost"
-                colorScheme="blue"
-                leftIcon={<FaTags />}
-                _focus={{
-                  boxShadow: "none",
-                  outline: "none",
-                }}
-                color="blue.500"
-                _hover={{ bg: "blue.500", color: "white" }}
-                h="100%"
-                fontSize="sm"
-                onClick={() => {}}
-                rightIcon={<BiChevronDown />}
-              >
-                Produtos
-              </MenuButton>
-              <MenuList shadow="lg">
-                {headerItens.map((item) => (
-                  <Link key={item._id} href={`/produtos/${item._id}`}>
-                    <MenuItem
-                      icon={<FaTshirt />}
-                      _hover={{
-                        bg: "blue.500",
-                        outline: "none",
-                        color: "gray.100",
-                      }}
-                      _focus={{
-                        bg: "blue.500",
-                        outline: "none",
-                        color: "gray.100",
-                      }}
-                    >
-                      {item.name}
-                    </MenuItem>
-                  </Link>
-                ))}
-              </MenuList>
-            </Menu>
+              <Menu colorScheme="yellow">
+                <MenuButton
+                  as={Button}
+                  size="lg"
+                  borderRadius="sm"
+                  variant="ghost"
+                  colorScheme="blue"
+                  leftIcon={<FaTags />}
+                  _focus={{
+                    boxShadow: "none",
+                    outline: "none",
+                  }}
+                  color="blue.500"
+                  _hover={{ bg: "blue.500", color: "white" }}
+                  h="100%"
+                  fontSize="sm"
+                  onClick={() => {}}
+                  rightIcon={<BiChevronDown />}
+                >
+                  Produtos
+                </MenuButton>
+                <MenuList shadow="lg">
+                  {headerItens.map((item) => (
+                    <Link key={item._id} href={`/produtos/${item._id}`}>
+                      <MenuItem
+                        icon={<FaTshirt />}
+                        _hover={{
+                          bg: "blue.500",
+                          outline: "none",
+                          color: "gray.100",
+                        }}
+                        _focus={{
+                          bg: "blue.500",
+                          outline: "none",
+                          color: "gray.100",
+                        }}
+                      >
+                        {item.name}
+                      </MenuItem>
+                    </Link>
+                  ))}
+                </MenuList>
+              </Menu>
 
-            <Link href="/quemsomos">
-              <Button
-                size="lg"
-                borderRadius="sm"
-                variant="ghost"
-                colorScheme="blue"
-                leftIcon={<FaInfoCircle />}
-                _focus={{
-                  boxShadow: "none",
-                  outline: "none",
-                }}
-                color="blue.500"
-                _hover={{ bg: "blue.500", color: "white" }}
-                h="100%"
-                fontSize="sm"
-              >
-                Quem Somos
-              </Button>
-            </Link>
-            <Link href={"/contato"}>
-              <Button
-                size="lg"
-                borderRadius="sm"
-                variant="ghost"
-                colorScheme="blue"
-                leftIcon={<FaPhone />}
-                _focus={{
-                  boxShadow: "none",
-                  outline: "none",
-                }}
-                color="blue.500"
-                _hover={{ bg: "blue.500", color: "white" }}
-                h="100%"
-                fontSize="sm"
-              >
-                Fale Conosco
-              </Button>
-            </Link>
-            <Link href="/comofunciona">
-              <Button
-                size="lg"
-                borderRadius="sm"
-                variant="ghost"
-                colorScheme="blue"
-                leftIcon={<FaQuestionCircle />}
-                _focus={{
-                  boxShadow: "none",
-                  outline: "none",
-                }}
-                color="blue.500"
-                _hover={{ bg: "blue.500", color: "white" }}
-                fontSize="sm"
-                h="100%"
-              >
-                Como Funciona
-              </Button>
-            </Link>
+              <Link href="/quemsomos">
+                <Button
+                  size="lg"
+                  borderRadius="sm"
+                  variant="ghost"
+                  colorScheme="blue"
+                  leftIcon={<FaInfoCircle />}
+                  _focus={{
+                    boxShadow: "none",
+                    outline: "none",
+                  }}
+                  color="blue.500"
+                  _hover={{ bg: "blue.500", color: "white" }}
+                  h="100%"
+                  fontSize="sm"
+                >
+                  Quem Somos
+                </Button>
+              </Link>
+              <Link href={"/contato"}>
+                <Button
+                  size="lg"
+                  borderRadius="sm"
+                  variant="ghost"
+                  colorScheme="blue"
+                  leftIcon={<FaPhone />}
+                  _focus={{
+                    boxShadow: "none",
+                    outline: "none",
+                  }}
+                  color="blue.500"
+                  _hover={{ bg: "blue.500", color: "white" }}
+                  h="100%"
+                  fontSize="sm"
+                >
+                  Fale Conosco
+                </Button>
+              </Link>
+              <Link href="/comofunciona">
+                <Button
+                  size="lg"
+                  borderRadius="sm"
+                  variant="ghost"
+                  colorScheme="blue"
+                  leftIcon={<FaQuestionCircle />}
+                  _focus={{
+                    boxShadow: "none",
+                    outline: "none",
+                  }}
+                  color="blue.500"
+                  _hover={{ bg: "blue.500", color: "white" }}
+                  fontSize="sm"
+                  h="100%"
+                >
+                  Como Funciona
+                </Button>
+              </Link>
+            </Flex>
           </Flex>
-        </Flex>
-      </FixedPanel>
-
+        </Container>
+      </Box>
       {/** MENU MOBILE */}
 
       <Drawer

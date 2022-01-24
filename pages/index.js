@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import HeaderApp from "../components/Header";
 import FooterApp from "../components/Footer";
-import { ContainerApp, Fixed, ContainerNonFixed } from "../styles/style";
+import { ContainerApp, ContainerNonFixed } from "../styles/style";
 import Banner from "../components/Banner";
 import {
   Grid,
@@ -14,9 +14,10 @@ import {
   Container,
   Center,
   IconButton,
+  Divider,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import { FaPaintBrush, FaCreditCard, FaTruck, FaCheck } from "react-icons/fa";
+import { FaPaintBrush, FaCreditCard, FaTruck } from "react-icons/fa";
 import { RiMoneyDollarCircleFill } from "react-icons/ri";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useRouter } from "next/router";
@@ -24,13 +25,15 @@ import config from "../configs/index";
 import Carousel from "react-elastic-carousel";
 import Link from "next/link";
 import Pixel from "../pixel/index";
+import Message from "../components/Message";
 
 import { useFooter } from "../context/footer";
 import { useHeader } from "../context/header";
+import { BiArrowFromLeft } from "react-icons/bi";
 
 export default function Home({ info }) {
-  const { footerItens, setFooterItens } = useFooter();
-  const { headerItens, setHeaderItens } = useHeader();
+  const { setFooterItens } = useFooter();
+  const { setHeaderItens } = useHeader();
 
   useEffect(() => {
     setFooterItens(info.productsFooter);
@@ -185,6 +188,215 @@ export default function Home({ info }) {
           )}
         </Grid>
       </Container>
+
+      <Container maxW={"6xl"}>
+        <Flex
+          direction={"column"}
+          justify={"center"}
+          align={"center"}
+          mt={20}
+          mb={10}
+        >
+          <Divider borderWidth={"2px"} borderColor={"blue.500"} opacity={1} />
+          <Box
+            w="30px"
+            h="30px"
+            bg="white"
+            border={"4px"}
+            rounded={"full"}
+            borderColor={"blue.500"}
+            mt={"-17px"}
+            zIndex={1}
+          />
+        </Flex>
+        <Box textAlign="center">
+          <Heading color="blue.500">PROCESSO DE COMPRA</Heading>
+          <Text color="blue.500" fontSize={["xs", "sm", "sm", "sm", "sm"]}>
+            VEJA PASSO A PASSO DESDE O MOMENTO DA ESCOLHA ATÉ O RECEBIMENTO EM
+            SUA CASA
+          </Text>
+        </Box>
+
+        <Grid
+          templateColumns={"repeat(auto-fit, minmax(200px, 200px))"}
+          mt={10}
+          justifyContent={"center"}
+          gap={5}
+        >
+          <Flex
+            direction={"column"}
+            align={"center"}
+            borderRightWidth={"1px"}
+            px={5}
+            pos={"relative"}
+          >
+            <Box w="15px" pos={"absolute"} right={-4} top={10}>
+              <Image
+                src="/img/arrow.svg"
+                width={50}
+                height={100}
+                objectFit="cover"
+                layout="responsive"
+                alt="Braz Camiseteira"
+              />
+            </Box>
+            <Box w="100%">
+              <Image
+                src="/img/1.svg"
+                width={500}
+                height={410}
+                objectFit="cover"
+                layout="responsive"
+                alt="Braz Camiseteira"
+              />
+            </Box>
+            <Text textAlign={"center"} mt={2} fontSize={"xs"}>
+              VOCÊ ESCOLHE O MODELO OU NOS ENVIE AS INFORMAÇÕES
+            </Text>
+            <Button
+              size={"xs"}
+              colorScheme={"orange"}
+              variant="link"
+              leftIcon={<BiArrowFromLeft />}
+              mt={2}
+            >
+              Nossos Modelos
+            </Button>
+            <Button
+              size={"xs"}
+              colorScheme={"orange"}
+              variant="link"
+              leftIcon={<BiArrowFromLeft />}
+            >
+              Catálogos
+            </Button>
+          </Flex>
+          <Flex
+            direction={"column"}
+            align={"center"}
+            borderRightWidth={"1px"}
+            px={5}
+            pos={"relative"}
+          >
+            <Box w="15px" pos={"absolute"} right={-4} top={10}>
+              <Image
+                src="/img/arrow.svg"
+                width={50}
+                height={100}
+                objectFit="cover"
+                layout="responsive"
+                alt="Braz Camiseteira"
+              />
+            </Box>
+            <Box w="70%">
+              <Image
+                src="/img/2.svg"
+                width={252}
+                height={280}
+                objectFit="cover"
+                layout="responsive"
+                alt="Braz Camiseteira"
+              />
+            </Box>
+            <Text textAlign={"center"} mt={2} fontSize={"xs"}>
+              ALINHA SEU PEDIDO COM UM CONSULTOR
+            </Text>
+            <Button
+              size={"xs"}
+              colorScheme={"orange"}
+              variant="link"
+              leftIcon={<BiArrowFromLeft />}
+              mt={2}
+            >
+              Fale Conosco
+            </Button>
+          </Flex>
+          <Flex
+            direction={"column"}
+            align={"center"}
+            borderRightWidth={"1px"}
+            px={5}
+            pos={"relative"}
+          >
+            <Box w="15px" pos={"absolute"} right={-4} top={10}>
+              <Image
+                src="/img/arrow.svg"
+                width={50}
+                height={100}
+                objectFit="cover"
+                layout="responsive"
+                alt="Braz Camiseteira"
+              />
+            </Box>
+            <Box w="60%">
+              <Image
+                src="/img/3.svg"
+                width={252}
+                height={300}
+                objectFit="cover"
+                layout="responsive"
+                alt="Braz Camiseteira"
+              />
+            </Box>
+            <Text textAlign={"center"} mt={5} fontSize={"xs"}>
+              EFETUA O PAGAMENTO
+            </Text>
+            <Text
+              textAlign={"center"}
+              fontSize={"xs"}
+              color="orange.500"
+              fontWeight={"semibold"}
+              mt={1}
+            >
+              Via Depósito bancário ou Cartões de Créditos
+            </Text>
+          </Flex>
+          <Flex
+            direction={"column"}
+            align={"center"}
+            borderRightWidth={"1px"}
+            px={5}
+            pos={"relative"}
+          >
+            <Box w="15px" pos={"absolute"} right={-4} top={10}>
+              <Image
+                src="/img/arrow.svg"
+                width={50}
+                height={100}
+                objectFit="cover"
+                layout="responsive"
+                alt="Braz Camiseteira"
+              />
+            </Box>
+            <Box w="100%">
+              <Image
+                src="/img/4.svg"
+                width={350}
+                height={300}
+                objectFit="cover"
+                layout="responsive"
+                alt="Braz Camiseteira"
+              />
+            </Box>
+            <Text textAlign={"center"} mt={5} fontSize={"xs"}>
+              PRODUZIMOS E PREPARAMOS SEU PEDIDO
+            </Text>
+          </Flex>
+          <Flex direction={"column"} align={"center"} px={5} pos={"relative"}>
+            <Box w="100%">
+              <Image
+                src="/img/5.svg"
+                width={370}
+                height={315}
+                objectFit="cover"
+                layout="responsive"
+                alt="Braz Camiseteira"
+              />
+            </Box>
+          </Flex>
+        </Grid>
+      </Container>
+
       <Box
         bgGradient="linear(to-l, blue.500, blue.900)"
         mt={20}
@@ -275,85 +487,51 @@ export default function Home({ info }) {
           </Text>
         </Container>
       </Box>
-      <Container maxW="6xl">
-        <Box mt={20} textAlign="center" mb={10}>
-          <Heading>PORTIFÓLIO DE ARTES</Heading>
-          <Text>Nosso Portifólio de Artes</Text>
-        </Box>
-        {JSON.stringify(products) === "{}" ? (
-          <Box h={"350px"}>
-            <Text fontSize="5xl" fontWeight="">
-              Nenhum dado para mostrar!
-            </Text>
-          </Box>
-        ) : (
-          <Carousel
-            breakPoints={config.carousel}
-            renderArrow={CustomArrow}
-            renderPagination={({ pages, activePage, onClick }) => {
-              return (
-                <Flex mt={3}>
-                  {pages.map((page) => {
-                    const isActivePage = activePage === page;
-                    return (
-                      <Box
-                        w="15px"
-                        h="15px"
-                        shadow="sm"
-                        bg={isActivePage ? "yellow.400" : "white"}
-                        key={page}
-                        onClick={() => onClick(page)}
-                        borderRadius="50%"
-                        mr={1}
-                        borderWidth="1px"
-                        borderColor="gray.500"
-                      />
-                    );
-                  })}
-                </Flex>
-              );
-            }}
-          >
-            {products.map((prod) => (
-              <Box w={"200px"} h={"250px"} p={1} key={prod._id}>
-                <Box
-                  w={"195px"}
-                  borderWidth="1px"
-                  borderRadius="lg"
-                  shadow="md"
-                  overflow="hidden"
-                >
-                  <Image
-                    src={`${urlPhoto}/${prod.thumbnail}`}
-                    alt={prod.imageDescription}
-                    width={195}
-                    height={195}
-                    layout="intrinsic"
-                  />
-                  <Flex>
-                    <Button
-                      size="md"
-                      variant="ghost"
-                      colorScheme="yellow"
-                      isFullWidth
-                      _focus={{ boxShadow: "none", outline: "none" }}
-                      p={1}
-                      onClick={(e) => goTo(e, `/catalogo/${prod._id}`)}
-                    >
-                      Veja Mais
-                    </Button>
-                  </Flex>
-                </Box>
-              </Box>
-            ))}
-          </Carousel>
-        )}
+
+      <Container maxW={"6xl"}>
+        <Flex direction={"column"} justify={"center"} align={"center"} mb={10}>
+          <Divider borderWidth={"2px"} borderColor={"blue.500"} opacity={1} />
+          <Box
+            w="30px"
+            h="30px"
+            bg="white"
+            border={"4px"}
+            rounded={"full"}
+            borderColor={"blue.500"}
+            mt={"-17px"}
+            zIndex={100}
+          />
+        </Flex>
       </Container>
 
-      <Box mt={20} bg="gray.900" pt={10} pb={20} w="100%">
+      <Message />
+
+      <Container maxW={"6xl"}>
+        <Flex
+          direction={"column"}
+          justify={"center"}
+          align={"center"}
+          mt={10}
+          mb={-3}
+        >
+          <Divider borderWidth={"2px"} borderColor={"blue.500"} opacity={1} />
+          <Box
+            w="30px"
+            h="30px"
+            bg="white"
+            border={"4px"}
+            rounded={"full"}
+            borderColor={"blue.500"}
+            mt={"-17px"}
+            zIndex={100}
+          />
+        </Flex>
+      </Container>
+
+      <Box bg="gray.100" pt={10} pb={20} w="100%">
         <Container maxW={"6xl"}>
           <Box textAlign="center" mb={10}>
-            <Heading color="yellow.400">DEPOIMENTOS</Heading>
+            <Heading color="blue.500">DEPOIMENTOS</Heading>
           </Box>
           {JSON.stringify(comments) === "{}" ? (
             <Box h={"100px"}>
@@ -375,7 +553,7 @@ export default function Home({ info }) {
                           w="15px"
                           h="15px"
                           shadow="sm"
-                          bg={isActivePage ? "yellow.400" : "gray.500"}
+                          bg={isActivePage ? "blue.500" : "gray.500"}
                           key={page}
                           onClick={() => onClick(page)}
                           borderRadius="50%"
@@ -397,13 +575,14 @@ export default function Home({ info }) {
                   key={com._id}
                 >
                   <Flex
-                    bg="gray.200"
+                    bg="gray.300"
                     borderRadius="lg"
                     w={"250px"}
                     h={"150px"}
                     direction="column"
                     align="center"
                     p={2}
+                    shadow={"md"}
                   >
                     <Text fontSize="11px" textAlign="center">
                       {com.text}
@@ -413,10 +592,9 @@ export default function Home({ info }) {
                     w={"83px"}
                     h="83px"
                     borderRadius="50%"
-                    borderWidth="2px"
-                    borderColor="yellow.400"
                     overflow="hidden"
                     mt={-10}
+                    shadow={"md"}
                   >
                     <Image
                       src={`${urlPhoto}/${com.avatar}`}
@@ -427,7 +605,7 @@ export default function Home({ info }) {
                     />
                   </Box>
 
-                  <Text color="gray.200" fontSize="sm">
+                  <Text color="blue.500" fontSize="sm">
                     {com.author}
                   </Text>
                 </Box>

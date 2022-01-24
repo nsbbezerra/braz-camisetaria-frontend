@@ -78,14 +78,18 @@ export default function ComoFunciona() {
             justify="center"
           >
             <Avatar
-              bg="yellow.400"
+              bg="blue.500"
+              color="white"
               icon={<FaTshirt fontSize="5rem" />}
               size="6xl"
               p={5}
             />
           </Flex>
           <Box>
-            <Heading fontSize={["2xl", "3xl", "3xl", "3xl", "3xl"]}>
+            <Heading
+              fontSize={["2xl", "3xl", "3xl", "3xl", "3xl"]}
+              color={"blue.500"}
+            >
               Primeiro Passo
             </Heading>
             <Text
@@ -119,14 +123,18 @@ export default function ComoFunciona() {
             justify="center"
           >
             <Avatar
-              bg="yellow.400"
+              bg="blue.500"
+              color="white"
               icon={<AiFillMessage fontSize="5rem" />}
               size="6xl"
               p={5}
             />
           </Flex>
           <Box>
-            <Heading fontSize={["2xl", "3xl", "3xl", "3xl", "3xl"]}>
+            <Heading
+              fontSize={["2xl", "3xl", "3xl", "3xl", "3xl"]}
+              color={"blue.500"}
+            >
               Segundo Passo
             </Heading>
             <Text
@@ -162,14 +170,18 @@ export default function ComoFunciona() {
             justify="center"
           >
             <Avatar
-              bg="yellow.400"
+              bg="blue.500"
+              color="white"
               icon={<FaFileInvoiceDollar fontSize="5rem" />}
               size="6xl"
               p={5}
             />
           </Flex>
           <Box>
-            <Heading fontSize={["2xl", "3xl", "3xl", "3xl", "3xl"]}>
+            <Heading
+              fontSize={["2xl", "3xl", "3xl", "3xl", "3xl"]}
+              color={"blue.500"}
+            >
               Terceiro Passo
             </Heading>
             <Text
@@ -205,14 +217,18 @@ export default function ComoFunciona() {
             justify="center"
           >
             <Avatar
-              bg="yellow.400"
+              bg="blue.500"
+              color="white"
               icon={<FaRulerCombined fontSize="5rem" />}
               size="6xl"
               p={5}
             />
           </Flex>
           <Box>
-            <Heading fontSize={["2xl", "3xl", "3xl", "3xl", "3xl"]}>
+            <Heading
+              fontSize={["2xl", "3xl", "3xl", "3xl", "3xl"]}
+              color={"blue.500"}
+            >
               Quarto Passo
             </Heading>
             <Text
@@ -249,14 +265,18 @@ export default function ComoFunciona() {
             justify="center"
           >
             <Avatar
-              bg="yellow.400"
+              bg="blue.500"
+              color="white"
               icon={<FaCreditCard fontSize="5rem" />}
               size="6xl"
               p={5}
             />
           </Flex>
           <Box>
-            <Heading fontSize={["2xl", "3xl", "3xl", "3xl", "3xl"]}>
+            <Heading
+              fontSize={["2xl", "3xl", "3xl", "3xl", "3xl"]}
+              color={"blue.500"}
+            >
               Quinto Passo
             </Heading>
             <Text
@@ -292,14 +312,18 @@ export default function ComoFunciona() {
             justify="center"
           >
             <Avatar
-              bg="yellow.400"
+              bg="blue.500"
+              color="white"
               icon={<FaMoneyBillAlt fontSize="5rem" />}
               size="6xl"
               p={5}
             />
           </Flex>
           <Box>
-            <Heading fontSize={["2xl", "3xl", "3xl", "3xl", "3xl"]}>
+            <Heading
+              fontSize={["2xl", "3xl", "3xl", "3xl", "3xl"]}
+              color={"blue.500"}
+            >
               Sexto Passo
             </Heading>
             <Text
@@ -346,14 +370,18 @@ export default function ComoFunciona() {
             justify="center"
           >
             <Avatar
-              bg="yellow.400"
+              bg="blue.500"
+              color="white"
               icon={<FaShoppingCart fontSize="5rem" />}
               size="6xl"
               p={5}
             />
           </Flex>
           <Box>
-            <Heading fontSize={["2xl", "3xl", "3xl", "3xl", "3xl"]}>
+            <Heading
+              fontSize={["2xl", "3xl", "3xl", "3xl", "3xl"]}
+              color={"blue.500"}
+            >
               Sétimo Passo
             </Heading>
             <Text

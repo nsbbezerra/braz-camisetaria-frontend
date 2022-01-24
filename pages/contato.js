@@ -53,7 +53,9 @@ export default function Contato() {
           </BreadcrumbItem>
         </Breadcrumb>
 
-        <Heading mb={5}>Onde Estamos</Heading>
+        <Heading mb={5} color="blue.500">
+          Onde Estamos
+        </Heading>
 
         <Box borderWidth="1px" borderRadius="lg" p={3} mb={10}>
           <AspectRatio ratio={16 / 9}>
@@ -61,24 +63,32 @@ export default function Contato() {
           </AspectRatio>
         </Box>
 
-        <Heading mb={5}>Palmieri Uniformes</Heading>
+        <Heading mb={5} color="blue.500">
+          Braz Multimídia
+        </Heading>
         <Flex align="center" mb={2}>
           <Icon as={FaWhatsapp} fontSize="2xl" />
           <Text ml={2} fontSize="xl">
-            (63) 98501-4015
+            (61) 99118-7898
           </Text>
         </Flex>
 
         <Flex align="center" mb={2}>
           <Icon as={AiOutlineMail} fontSize="2xl" />
           <Text ml={2} fontSize="xl">
-            Palmieriuniformes@gmail.com
+            brazmultimidia@gmail.com
           </Text>
         </Flex>
         <Flex align="center" mb={2}>
           <Icon as={AiOutlineClockCircle} fontSize="2xl" />
           <Text ml={2} fontSize="xl">
-            De Segunda a Sexta das 9:00 às 18:00hrs
+            De Segunda a Sexta das 8:00 às 18:00hrs
+          </Text>
+        </Flex>
+        <Flex align="center" mb={2}>
+          <Icon as={AiOutlineClockCircle} fontSize="2xl" />
+          <Text ml={2} fontSize="xl">
+            Sábado das 8:00 às 12:00hrs
           </Text>
         </Flex>
       </Container>
