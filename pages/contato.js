@@ -23,7 +23,7 @@ export default function Contato() {
     <ContainerApp>
       <ContainerNonFixed>
         <HeaderApp />
-        <Box w="100%" display="block">
+        <Box w="100%" display="block" mt={"60px"}>
           <Image
             src="/img/banner.png"
             layout="responsive"
