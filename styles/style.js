@@ -26,7 +26,7 @@ export const FixedPanel = styled.div`
   transition: all 0.8s;
   position: fixed;
   z-index: 1000;
-  height: 50px;
+  height: 60px;
   top: 0;
   background-color: rgba(240, 240, 240, 0.9);
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);

@@ -112,7 +112,7 @@ export default function Home({ info }) {
       </ContainerNonFixed>
       <Container maxW={"6xl"}>
         <Box mt={10} textAlign="center">
-          <Heading>VEJA NOSSOS MODELOS</Heading>
+          <Heading color="blue.500">VEJA NOSSOS MODELOS</Heading>
           <Text>
             Uniformes para diferentes utilidades, Escolha o que melhor lhe
             atender
@@ -156,7 +156,15 @@ export default function Home({ info }) {
                   align="center"
                   h="80px"
                 >
-                  <Text fontSize="md" fontWeight="700" textAlign="center">
+                  <Text
+                    fontSize="md"
+                    fontWeight="700"
+                    textAlign="center"
+                    w="100%"
+                    bg="blue.500"
+                    color="white"
+                    p={1}
+                  >
                     {cat.name}
                   </Text>
                   <Link href={`/produtos/${cat._id}`}>

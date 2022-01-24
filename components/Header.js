@@ -65,8 +65,8 @@ export default function HeaderApp() {
     <>
       <Head>
         <title>
-          Palmieri Uniformes | Uniforme Empresarial, Uniforme Esportivo,
-          Uniforme Promocional, Abadás
+          Braz Camiseteria | Uniforme Empresarial, Uniforme Esportivo, Uniforme
+          Promocional, Abadás
         </title>
         <link rel="icon" href="/icone.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -89,32 +89,27 @@ export default function HeaderApp() {
 
       <Flex
         bg="gray.100"
-        h="50px"
+        h="60px"
         pr={10}
         pl={10}
         justify={"space-between"}
         mb="-2px"
       >
-        <Flex h="50px" align="center">
-          <Box w="40px" h="40px" mr={"15px"} cursor="pointer">
+        <Flex h="60px" align="center">
+          <Box h="50px" cursor="pointer">
             <Link href="/">
               <Image
-                src="/img/icone.png"
-                width={40}
-                height={40}
+                src="/img/logo.svg"
+                width={110}
+                height={45}
                 quality={100}
               />
-            </Link>
-          </Box>
-          <Box w="100px" h="40px" cursor="pointer">
-            <Link href="/">
-              <Image src="/img/logo.png" width={95} height={35} quality={100} />
             </Link>
           </Box>
         </Flex>
         <Flex
           w={"70%"}
-          h="50px"
+          h="60px"
           justify="flex-end"
           align="center"
           display={["flex", "flex", "flex", "none", "none"]}
@@ -128,7 +123,7 @@ export default function HeaderApp() {
         </Flex>
         <Flex
           w={"70%"}
-          h="50px"
+          h="60px"
           justify="flex-end"
           align="center"
           display={["none", "none", "none", "flex", "flex"]}
@@ -138,16 +133,16 @@ export default function HeaderApp() {
               size="lg"
               borderRadius="sm"
               variant="ghost"
-              colorScheme="yellow"
+              colorScheme="blue"
               leftIcon={<FaHome />}
               _focus={{
                 boxShadow: "none",
                 outline: "none",
               }}
-              color="gray.900"
-              _hover={{ bg: "yellow.400" }}
+              color="blue.500"
+              _hover={{ bg: "blue.500", color: "white" }}
               fontSize="sm"
-              onClick={() => {}}
+              h="100%"
             >
               Início
             </Button>
@@ -158,32 +153,33 @@ export default function HeaderApp() {
               size="lg"
               borderRadius="sm"
               variant="ghost"
-              colorScheme="yellow"
+              colorScheme="blue"
               leftIcon={<FaTags />}
               _focus={{
                 boxShadow: "none",
                 outline: "none",
               }}
-              color="gray.900"
-              _hover={{ bg: "yellow.400" }}
+              color="blue.500"
+              _hover={{ bg: "blue.500", color: "white" }}
+              h="100%"
               fontSize="sm"
               onClick={() => {}}
               rightIcon={<BiChevronDown />}
             >
               Produtos
             </MenuButton>
-            <MenuList shadow="lg" bg="yellow.400" borderColor="transparent">
+            <MenuList shadow="lg">
               {headerItens.map((item) => (
                 <Link key={item._id} href={`/produtos/${item._id}`}>
                   <MenuItem
                     icon={<FaTshirt />}
                     _hover={{
-                      bg: "gray.900",
+                      bg: "blue.500",
                       outline: "none",
                       color: "gray.100",
                     }}
                     _focus={{
-                      bg: "gray.900",
+                      bg: "blue.500",
                       outline: "none",
                       color: "gray.100",
                     }}
@@ -200,14 +196,15 @@ export default function HeaderApp() {
               size="lg"
               borderRadius="sm"
               variant="ghost"
-              colorScheme="yellow"
+              colorScheme="blue"
               leftIcon={<FaInfoCircle />}
               _focus={{
                 boxShadow: "none",
                 outline: "none",
               }}
-              color="gray.900"
-              _hover={{ bg: "yellow.400" }}
+              color="blue.500"
+              _hover={{ bg: "blue.500", color: "white" }}
+              h="100%"
               fontSize="sm"
             >
               Quem Somos
@@ -218,14 +215,15 @@ export default function HeaderApp() {
               size="lg"
               borderRadius="sm"
               variant="ghost"
-              colorScheme="yellow"
+              colorScheme="blue"
               leftIcon={<FaPhone />}
               _focus={{
                 boxShadow: "none",
                 outline: "none",
               }}
-              color="gray.900"
-              _hover={{ bg: "yellow.400" }}
+              color="blue.500"
+              _hover={{ bg: "blue.500", color: "white" }}
+              h="100%"
               fontSize="sm"
             >
               Fale Conosco
@@ -236,15 +234,16 @@ export default function HeaderApp() {
               size="lg"
               borderRadius="sm"
               variant="ghost"
-              colorScheme="yellow"
+              colorScheme="blue"
               leftIcon={<FaQuestionCircle />}
               _focus={{
                 boxShadow: "none",
                 outline: "none",
               }}
-              color="gray.900"
-              _hover={{ bg: "yellow.400" }}
+              color="blue.500"
+              _hover={{ bg: "blue.500", color: "white" }}
               fontSize="sm"
+              h="100%"
             >
               Como Funciona
             </Button>
@@ -255,24 +254,21 @@ export default function HeaderApp() {
       {/** MENU FIXO */}
 
       <FixedPanel display={display}>
-        <Flex h="50px" pr={10} pl={10} justify={"space-between"}>
-          <Flex h="50px" align="center">
-            <Box w="40px" h="40px" mr={"15px"} cursor="pointer">
+        <Flex
+          h="60px"
+          pr={10}
+          pl={10}
+          justify={"space-between"}
+          mb="-2px"
+          shadow={"lg"}
+        >
+          <Flex h="60px" align="center">
+            <Box h="50px" cursor="pointer">
               <Link href="/">
                 <Image
-                  src="/img/icone.png"
-                  width={40}
-                  height={40}
-                  quality={100}
-                />
-              </Link>
-            </Box>
-            <Box w="100px" h="40px" cursor="pointer">
-              <Link href="/">
-                <Image
-                  src="/img/logo.png"
-                  width={95}
-                  height={35}
+                  src="/img/logo.svg"
+                  width={110}
+                  height={45}
                   quality={100}
                 />
               </Link>
@@ -280,7 +276,7 @@ export default function HeaderApp() {
           </Flex>
           <Flex
             w={"70%"}
-            h="50px"
+            h="60px"
             justify="flex-end"
             align="center"
             display={["flex", "flex", "flex", "none", "none"]}
@@ -294,7 +290,7 @@ export default function HeaderApp() {
           </Flex>
           <Flex
             w={"70%"}
-            h="50px"
+            h="60px"
             justify="flex-end"
             align="center"
             display={["none", "none", "none", "flex", "flex"]}
@@ -304,51 +300,53 @@ export default function HeaderApp() {
                 size="lg"
                 borderRadius="sm"
                 variant="ghost"
-                colorScheme="yellow"
+                colorScheme="blue"
                 leftIcon={<FaHome />}
                 _focus={{
                   boxShadow: "none",
                   outline: "none",
                 }}
-                color="gray.900"
-                _hover={{ bg: "yellow.400" }}
+                color="blue.500"
+                _hover={{ bg: "blue.500", color: "white" }}
                 fontSize="sm"
+                h="100%"
               >
                 Início
               </Button>
             </Link>
-            <Menu>
+            <Menu colorScheme="yellow">
               <MenuButton
                 as={Button}
                 size="lg"
                 borderRadius="sm"
                 variant="ghost"
-                colorScheme="yellow"
+                colorScheme="blue"
                 leftIcon={<FaTags />}
                 _focus={{
                   boxShadow: "none",
                   outline: "none",
                 }}
-                color="gray.900"
-                _hover={{ bg: "yellow.400" }}
+                color="blue.500"
+                _hover={{ bg: "blue.500", color: "white" }}
+                h="100%"
                 fontSize="sm"
                 onClick={() => {}}
                 rightIcon={<BiChevronDown />}
               >
                 Produtos
               </MenuButton>
-              <MenuList shadow="lg" bg={"yellow.400"} borderColor="transparent">
+              <MenuList shadow="lg">
                 {headerItens.map((item) => (
                   <Link key={item._id} href={`/produtos/${item._id}`}>
                     <MenuItem
                       icon={<FaTshirt />}
                       _hover={{
-                        bg: "gray.900",
+                        bg: "blue.500",
                         outline: "none",
                         color: "gray.100",
                       }}
                       _focus={{
-                        bg: "gray.900",
+                        bg: "blue.500",
                         outline: "none",
                         color: "gray.100",
                       }}
@@ -359,37 +357,40 @@ export default function HeaderApp() {
                 ))}
               </MenuList>
             </Menu>
+
             <Link href="/quemsomos">
               <Button
                 size="lg"
                 borderRadius="sm"
                 variant="ghost"
-                colorScheme="yellow"
+                colorScheme="blue"
                 leftIcon={<FaInfoCircle />}
                 _focus={{
                   boxShadow: "none",
                   outline: "none",
                 }}
-                color="gray.900"
-                _hover={{ bg: "yellow.400" }}
+                color="blue.500"
+                _hover={{ bg: "blue.500", color: "white" }}
+                h="100%"
                 fontSize="sm"
               >
                 Quem Somos
               </Button>
             </Link>
-            <Link href="/contato">
+            <Link href={"/contato"}>
               <Button
                 size="lg"
                 borderRadius="sm"
                 variant="ghost"
-                colorScheme="yellow"
+                colorScheme="blue"
                 leftIcon={<FaPhone />}
                 _focus={{
                   boxShadow: "none",
                   outline: "none",
                 }}
-                color="gray.900"
-                _hover={{ bg: "yellow.400" }}
+                color="blue.500"
+                _hover={{ bg: "blue.500", color: "white" }}
+                h="100%"
                 fontSize="sm"
               >
                 Fale Conosco
@@ -400,15 +401,16 @@ export default function HeaderApp() {
                 size="lg"
                 borderRadius="sm"
                 variant="ghost"
-                colorScheme="yellow"
+                colorScheme="blue"
                 leftIcon={<FaQuestionCircle />}
                 _focus={{
                   boxShadow: "none",
                   outline: "none",
                 }}
-                color="gray.900"
-                _hover={{ bg: "yellow.400" }}
+                color="blue.500"
+                _hover={{ bg: "blue.500", color: "white" }}
                 fontSize="sm"
+                h="100%"
               >
                 Como Funciona
               </Button>
@@ -426,9 +428,9 @@ export default function HeaderApp() {
       >
         <DrawerOverlay>
           <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerHeader bg="yellow.300">
-              <Flex align="center">
+            <DrawerCloseButton color={"white"} />
+            <DrawerHeader bg="blue.500">
+              <Flex align="center" color="white">
                 <Icon as={FaBars} fontSize={"25px"} mr={5} />
                 <Heading size="lg">MENU</Heading>
               </Flex>
