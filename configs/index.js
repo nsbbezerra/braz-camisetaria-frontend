@@ -17,7 +17,7 @@ const config = {
     message: "Olá Braz Multimídia, vim pelo site",
     phone: "5563985014015",
     //urlApi: "http://localhost:21489",
-    urlApi: "http://palmieriuniformes.nodejsng36f02.kinghost.net:21489",
+    urlApi: "http://palmieriuniformes.nodejsng36f02.kinghost.net:21045",
   },
 };
 export default config;
