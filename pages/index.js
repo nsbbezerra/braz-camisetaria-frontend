@@ -625,6 +625,7 @@ export default function Home({ info }) {
 export const getStaticProps = async () => {
   const response = await fetch(`${config.general.urlApi}/home`);
   const data = await response.json();
+  console.log(data);
   return {
     props: {
       info: data,

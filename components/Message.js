@@ -83,15 +83,12 @@ export default function Message() {
     setDisable(true);
     setSendLoading(true);
     await axios
-      .post(`${configs.general.bitrix}crm.lead.add`, {
-        fields: {
-          TITLE: name,
-          UF_CRM_1594849103038: message,
-          ADDRESS: qtd,
-          PHONE: [{ VALUE: phone, VALUE_TYPE: "WORK" }],
-          UF_CRM_1562994962166: email,
-          NAME: name,
-        },
+      .post("/api/messages", {
+        name: name,
+        message: message,
+        qtd: qtd,
+        phone: phone,
+        email: email,
       })
       .then((response) => {
         setComplete(true);
@@ -128,7 +125,7 @@ export default function Message() {
               </Text>
               <Input
                 placeholder="Nome"
-                focusBorderColor="yellow.400"
+                focusBorderColor="blue.500"
                 bg={"white"}
                 borderColor="gray.400"
                 mb={2}
@@ -139,7 +136,7 @@ export default function Message() {
               <Input
                 placeholder="Telefone"
                 type="number"
-                focusBorderColor="yellow.400"
+                focusBorderColor="blue.500"
                 bg={"white"}
                 borderColor="gray.400"
                 mb={2}
@@ -150,7 +147,7 @@ export default function Message() {
               <Input
                 placeholder="Email"
                 type="email"
-                focusBorderColor="yellow.400"
+                focusBorderColor="blue.500"
                 bg={"white"}
                 borderColor="gray.400"
                 mb={2}
@@ -161,7 +158,7 @@ export default function Message() {
               <Input
                 placeholder="Quantidade de Camisetas"
                 type="number"
-                focusBorderColor="yellow.400"
+                focusBorderColor="blue.500"
                 bg={"white"}
                 borderColor="gray.400"
                 mb={2}
@@ -171,7 +168,7 @@ export default function Message() {
               />
               <Textarea
                 placeholder="Sua mensagem aqui"
-                focusBorderColor="yellow.400"
+                focusBorderColor="blue.500"
                 bg={"white"}
                 borderColor="gray.400"
                 rows={4}
