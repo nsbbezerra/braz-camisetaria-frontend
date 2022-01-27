@@ -76,30 +76,40 @@ export default function Home({ info }) {
           display={["none", "none", "none", "flex", "flex"]}
           alignItems="center"
           justifyContent="center"
-          p="5px"
+          p="7px"
         >
-          <Grid
-            templateColumns="repeat(4, 1fr)"
-            justifyContent="center"
-            gap="15px"
-          >
-            <Flex align="center">
-              <Icon as={FaCreditCard} fontSize="5xl" mr="10px" />
-              <Text fontSize={"sm"}>Pague no Boleto ou Cartão de Crédito</Text>
-            </Flex>
-            <Flex align="center">
-              <Icon as={FaTruck} fontSize="5xl" mr="10px" />
-              <Text fontSize={"sm"}>Entregamos para todo o Brasil</Text>
-            </Flex>
-            <Flex align="center">
-              <Icon as={RiMoneyDollarCircleFill} fontSize="5xl" mr="10px" />
-              <Text fontSize={"sm"}>Cobrimos 40% do valor do Frete</Text>
-            </Flex>
-            <Flex align="center">
-              <Icon as={FaPaintBrush} fontSize="4xl" mr="10px" />
-              <Text fontSize={"sm"}>Criamos sua arte 100% grátis</Text>
-            </Flex>
-          </Grid>
+          <Container maxW="6xl">
+            <Grid
+              templateColumns="repeat(4, 1fr)"
+              justifyContent="center"
+              gap={20}
+            >
+              <Flex align="center" color="blue.500">
+                <Icon as={FaCreditCard} fontSize="4xl" mr="10px" />
+                <Text fontSize={"sm"} fontWeight={"semibold"}>
+                  Pague no Boleto ou Cartão de Crédito
+                </Text>
+              </Flex>
+              <Flex align="center" color="blue.500">
+                <Icon as={FaTruck} fontSize="4xl" mr="10px" />
+                <Text fontSize={"sm"} fontWeight={"semibold"}>
+                  Entregamos para todo o Brasil
+                </Text>
+              </Flex>
+              <Flex align="center" color="blue.500">
+                <Icon as={RiMoneyDollarCircleFill} fontSize="4xl" mr="10px" />
+                <Text fontSize={"sm"} fontWeight={"semibold"}>
+                  Cobrimos 40% do valor do Frete
+                </Text>
+              </Flex>
+              <Flex align="center" color="blue.500">
+                <Icon as={FaPaintBrush} fontSize="4xl" mr="10px" />
+                <Text fontSize={"sm"} fontWeight={"semibold"}>
+                  Criamos sua arte 100% grátis
+                </Text>
+              </Flex>
+            </Grid>
+          </Container>
         </Box>
         <Flex
           justify="center"
@@ -113,9 +123,14 @@ export default function Home({ info }) {
           />
         </Flex>
       </ContainerNonFixed>
-      <Container maxW={"6xl"}>
+      <Container maxW={"5xl"}>
         <Box mt={10} textAlign="center">
-          <Heading color="blue.500">CONFIRA NOSSOS PRODUTOS</Heading>
+          <Heading
+            color="blue.500"
+            fontSize={["2xl", "3xl", "4xl", "4xl", "4xl"]}
+          >
+            CONFIRA NOSSOS PRODUTOS
+          </Heading>
           <Text color="blue.500" fontSize={["xs", "sm", "sm", "sm", "sm"]}>
             UNIFORMES PARA DIFERENTES UTILIDADES, ESCOLHA O QUE MELHOR LHE
             ATENDER
@@ -123,8 +138,14 @@ export default function Home({ info }) {
         </Box>
 
         <Grid
-          templateColumns="repeat(auto-fit, minmax(250px, 250px))"
-          gap={"30px"}
+          templateColumns={[
+            "repeat(2, 1fr)",
+            "repeat(3, 1fr)",
+            "repeat(4, 1fr)",
+            "repeat(4, 1fr)",
+            "repeat(4, 1fr)",
+          ]}
+          gap={[5, 5, 5, 7, 7]}
           justifyContent="center"
           mt={10}
         >
@@ -138,29 +159,30 @@ export default function Home({ info }) {
             category.map((cat) => (
               <Box
                 borderWidth="1px"
-                w="250px"
+                w="100%"
                 shadow="lg"
                 borderRadius="lg"
                 overflow="hidden"
                 key={cat._id}
               >
-                <Image
-                  src={`${urlPhoto}/${cat.thumbnail}`}
-                  alt={cat.imageDescription}
-                  width={250}
-                  height={250}
-                  layout="intrinsic"
-                />
+                <Box w="100%">
+                  <Image
+                    src={`${urlPhoto}/${cat.thumbnail}`}
+                    alt={cat.imageDescription}
+                    width={250}
+                    height={250}
+                    layout="responsive"
+                  />
+                </Box>
 
                 <Flex
-                  p={4}
+                  p={[2, 2, 2, 3, 3]}
                   direction="column"
                   justify="center"
                   align="center"
-                  h="80px"
                 >
                   <Text
-                    fontSize="md"
+                    fontSize={["sm", "md", "md", "md", "md"]}
                     fontWeight="700"
                     textAlign="center"
                     w="100%"
@@ -177,7 +199,6 @@ export default function Home({ info }) {
                       colorScheme="yellow"
                       mt={2}
                       _focus={{ boxShadow: "none", outline: "none" }}
-                      p={1}
                     >
                       Veja Mais
                     </Button>
@@ -189,7 +210,7 @@ export default function Home({ info }) {
         </Grid>
       </Container>
 
-      <Container maxW={"6xl"}>
+      <Container maxW={"6xl"} id="comofunciona">
         <Flex
           direction={"column"}
           justify={"center"}
@@ -197,20 +218,25 @@ export default function Home({ info }) {
           mt={20}
           mb={10}
         >
-          <Divider borderWidth={"2px"} borderColor={"blue.500"} opacity={1} />
+          <Divider opacity={0.3} />
           <Box
             w="30px"
             h="30px"
             bg="white"
-            border={"4px"}
+            borderWidth={"1px"}
+            borderColor={"blue.100"}
             rounded={"full"}
-            borderColor={"blue.500"}
             mt={"-17px"}
             zIndex={1}
           />
         </Flex>
         <Box textAlign="center">
-          <Heading color="blue.500">PROCESSO DE COMPRA</Heading>
+          <Heading
+            color="blue.500"
+            fontSize={["2xl", "3xl", "4xl", "4xl", "4xl"]}
+          >
+            PROCESSO DE COMPRA
+          </Heading>
           <Text color="blue.500" fontSize={["xs", "sm", "sm", "sm", "sm"]}>
             VEJA PASSO A PASSO DESDE O MOMENTO DA ESCOLHA ATÉ O RECEBIMENTO EM
             SUA CASA
@@ -218,7 +244,13 @@ export default function Home({ info }) {
         </Box>
 
         <Grid
-          templateColumns={"repeat(auto-fit, minmax(200px, 200px))"}
+          templateColumns={[
+            "repeat(2, 1fr)",
+            "repeat(3, 1fr)",
+            "repeat(5, 1fr)",
+            "repeat(5, 1fr)",
+            "repeat(5, 1fr)",
+          ]}
           mt={10}
           justifyContent={"center"}
           gap={5}
@@ -403,10 +435,15 @@ export default function Home({ info }) {
         backgroundPosition="bottom"
         p={[5, 20, 20, 20, 20]}
         w="100%"
+        id="quemsomos"
       >
         <Container maxW={"6xl"}>
           <Center>
-            <Heading color="white" textAlign="center" fontSize={"5xl"}>
+            <Heading
+              color="white"
+              textAlign="center"
+              fontSize={["2xl", "3xl", "4xl", "4xl", "4xl"]}
+            >
               QUEM SOMOS
             </Heading>
           </Center>
@@ -463,11 +500,15 @@ export default function Home({ info }) {
       >
         <Container maxW={"6xl"}>
           <Center>
-            <Heading color="blue.500" textAlign="center" fontSize={"5xl"}>
+            <Heading
+              color="blue.500"
+              textAlign="center"
+              fontSize={["2xl", "3xl", "4xl", "4xl", "4xl"]}
+            >
               NOSSA ESTRUTURA
             </Heading>
           </Center>
-          <Text mt={5} color={"blue.500"} textAlign={"center"} fontSize={"lg"}>
+          <Text mt={5} color={"blue.500"} textAlign={"center"}>
             A Braz Multimídia orgulha-se de empregar em seus processos
             produtivos e administrativos, tecnologias e equipamentos de ponta no
             mercado, a fim de tornar sua operação mais rápida, ágil e
@@ -475,7 +516,7 @@ export default function Home({ info }) {
             cliente e de seu pedido são inseridos em um sistema de gestão online
             que é acessado pela equipe interna em todos os setores.
           </Text>
-          <Text mt={3} color={"blue.500"} textAlign={"center"} fontSize={"lg"}>
+          <Text mt={3} color={"blue.500"} textAlign={"center"}>
             Desta forma, são minimizados as chances de desencontro de
             informações e consequentemente, erros nos pedidos. Na produção o
             cliente conta com mais tecnologia. Nossa fábrica trabalha com os
@@ -489,15 +530,15 @@ export default function Home({ info }) {
       </Box>
 
       <Container maxW={"6xl"}>
-        <Flex direction={"column"} justify={"center"} align={"center"} mb={10}>
-          <Divider borderWidth={"2px"} borderColor={"blue.500"} opacity={1} />
+        <Flex direction={"column"} justify={"center"} align={"center"}>
+          <Divider opacity={0.3} />
           <Box
             w="30px"
             h="30px"
             bg="white"
-            border={"4px"}
+            borderWidth={"1px"}
+            borderColor={"blue.100"}
             rounded={"full"}
-            borderColor={"blue.500"}
             mt={"-17px"}
             zIndex={100}
           />
@@ -506,22 +547,16 @@ export default function Home({ info }) {
 
       <Message />
 
-      <Container maxW={"6xl"}>
-        <Flex
-          direction={"column"}
-          justify={"center"}
-          align={"center"}
-          mt={10}
-          mb={-3}
-        >
-          <Divider borderWidth={"2px"} borderColor={"blue.500"} opacity={1} />
+      <Container maxW={"6xl"} mb={-4}>
+        <Flex direction={"column"} justify={"center"} align={"center"}>
+          <Divider opacity={0.3} />
           <Box
             w="30px"
             h="30px"
             bg="white"
-            border={"4px"}
+            borderWidth={"1px"}
+            borderColor={"blue.100"}
             rounded={"full"}
-            borderColor={"blue.500"}
             mt={"-17px"}
             zIndex={100}
           />
@@ -531,7 +566,12 @@ export default function Home({ info }) {
       <Box bg="gray.100" pt={10} pb={20} w="100%">
         <Container maxW={"6xl"}>
           <Box textAlign="center" mb={10}>
-            <Heading color="blue.500">DEPOIMENTOS</Heading>
+            <Heading
+              color="blue.500"
+              fontSize={["2xl", "3xl", "4xl", "4xl", "4xl"]}
+            >
+              DEPOIMENTOS
+            </Heading>
           </Box>
           {JSON.stringify(comments) === "{}" ? (
             <Box h={"100px"}>
@@ -601,7 +641,7 @@ export default function Home({ info }) {
                       width={83}
                       height={83}
                       layout="intrinsic"
-                      alt="Palmieri Uniformes Avatar"
+                      alt="Braz Multimídia Avatar"
                     />
                   </Box>
 
@@ -625,7 +665,6 @@ export default function Home({ info }) {
 export const getStaticProps = async () => {
   const response = await fetch(`${config.general.urlApi}/home`);
   const data = await response.json();
-  console.log(data);
   return {
     props: {
       info: data,

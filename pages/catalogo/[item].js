@@ -28,7 +28,6 @@ import {
   ModalCloseButton,
   Flex,
   Spinner,
-  IconButton,
 } from "@chakra-ui/react";
 import { ContainerApp, Fixed, ContainerNonFixed } from "../../styles/style";
 import HeaderApp from "../../components/Header";
@@ -272,24 +271,22 @@ export default function ItemCatalogo({ prods }) {
     <ContainerApp>
       <ContainerNonFixed>
         <HeaderApp />
-        <Box w="100%" display="block" mt={"60px"}>
-          <Image
-            src="/img/banner-web.png"
-            layout="responsive"
-            objectFit="contain"
-            width={1500}
-            height={361}
-            quality={100}
-          />
-        </Box>
+        <Flex
+          w="100%"
+          mt={"60px"}
+          bgGradient="linear(to-l, blue.500, blue.900)"
+          justify={"center"}
+          align={"center"}
+          h="60"
+          color={"white"}
+        >
+          <Heading>PRODUTOS</Heading>
+        </Flex>
       </ContainerNonFixed>
 
       <Fixed>
         <Container maxW="6xl" mt={10} mb={10}>
-          <Breadcrumb
-            fontSize={"md"}
-            display={["none", "flex", "flex", "flex", "flex"]}
-          >
+          <Breadcrumb fontSize={"xs"} textTransform={"uppercase"}>
             <BreadcrumbItem>
               <Link href="/" passHref>
                 <BreadcrumbLink>início</BreadcrumbLink>

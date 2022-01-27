@@ -47,7 +47,7 @@ export default function Produtos({ prods }) {
           <Flex>
             <Box w="40px" h="40px" mr={"15px"}>
               <Image
-                src="/img/icone.png"
+                src="/img/icone.svg"
                 width={40}
                 height={40}
                 quality={100}
@@ -108,25 +108,23 @@ export default function Produtos({ prods }) {
     <ContainerApp>
       <ContainerNonFixed>
         <HeaderApp />
-        <Box w="100%" display="block" mt={"60px"}>
-          <Image
-            src="/img/banner-web.png"
-            layout="responsive"
-            objectFit="contain"
-            width={1500}
-            height={361}
-            quality={100}
-          />
-        </Box>
+        <Flex
+          w="100%"
+          mt={"60px"}
+          bgGradient="linear(to-l, blue.500, blue.900)"
+          justify={"center"}
+          align={"center"}
+          h="60"
+          color={"white"}
+        >
+          <Heading>PRODUTOS</Heading>
+        </Flex>
       </ContainerNonFixed>
       <Fixed>
         <Container maxW="7xl" mt={10} mb={10}>
-          <Flex align="center" justify="space-between" pr={10}>
+          <Flex align="center" justify="space-between" px={3}>
             <Box>
-              <Breadcrumb
-                fontSize={"md"}
-                display={["none", "flex", "flex", "flex", "flex"]}
-              >
+              <Breadcrumb fontSize={"xs"} textTransform={"uppercase"}>
                 <BreadcrumbItem>
                   <Link href="/" passHref>
                     <BreadcrumbLink>início</BreadcrumbLink>
@@ -151,7 +149,7 @@ export default function Produtos({ prods }) {
               <IconButton
                 aria-label="Search database"
                 icon={menuOpen === false ? <FaBars /> : <FaTimes />}
-                fontSize={"30px"}
+                fontSize={"20px"}
                 onClick={() => setMenuOpen(!menuOpen)}
               />
             </Box>
@@ -306,10 +304,9 @@ export default function Produtos({ prods }) {
                           mt={1}
                           _focus={{ boxShadow: "none", outline: "none" }}
                           isFullWidth
-                          leftIcon={<FaImages />}
                           size={"sm"}
                         >
-                          Catálogo
+                          Saiba Mais
                         </Button>
                       </Link>
                     </Flex>

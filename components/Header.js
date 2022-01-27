@@ -49,7 +49,7 @@ export default function HeaderApp() {
           Braz Camiseteria | Uniforme Empresarial, Uniforme Esportivo, Uniforme
           Promocional, Abadás
         </title>
-        <link rel="icon" href="/icone.ico" />
+        <link rel="icon" href="/img/icone.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
@@ -85,10 +85,10 @@ export default function HeaderApp() {
               <Box h="50px" cursor="pointer">
                 <Link href="/">
                   <Image
-                    src="/img/logo.svg"
-                    width={110}
-                    height={45}
-                    quality={100}
+                    src="/img/icone.svg"
+                    width={50}
+                    height={50}
+                    alt="Braz Multimídia"
                   />
                 </Link>
               </Box>
@@ -177,25 +177,6 @@ export default function HeaderApp() {
                 </MenuList>
               </Menu>
 
-              <Link href="/quemsomos">
-                <Button
-                  size="lg"
-                  borderRadius="sm"
-                  variant="ghost"
-                  colorScheme="blue"
-                  leftIcon={<FaInfoCircle />}
-                  _focus={{
-                    boxShadow: "none",
-                    outline: "none",
-                  }}
-                  color="blue.500"
-                  _hover={{ bg: "blue.500", color: "white" }}
-                  h="100%"
-                  fontSize="sm"
-                >
-                  Quem Somos
-                </Button>
-              </Link>
               <Link href={"/contato"}>
                 <Button
                   size="lg"
@@ -215,7 +196,7 @@ export default function HeaderApp() {
                   Fale Conosco
                 </Button>
               </Link>
-              <Link href="/comofunciona">
+              <Link href="/#comofunciona">
                 <Button
                   size="lg"
                   borderRadius="sm"
@@ -232,6 +213,25 @@ export default function HeaderApp() {
                   h="100%"
                 >
                   Como Funciona
+                </Button>
+              </Link>
+              <Link href="/#quemsomos">
+                <Button
+                  size="lg"
+                  borderRadius="sm"
+                  variant="ghost"
+                  colorScheme="blue"
+                  leftIcon={<FaInfoCircle />}
+                  _focus={{
+                    boxShadow: "none",
+                    outline: "none",
+                  }}
+                  color="blue.500"
+                  _hover={{ bg: "blue.500", color: "white" }}
+                  h="100%"
+                  fontSize="sm"
+                >
+                  Quem Somos
                 </Button>
               </Link>
             </Flex>
@@ -307,19 +307,6 @@ export default function HeaderApp() {
                   ))}
                 </Box>
               </Collapse>
-              <Link href="/quemsomos">
-                <Button
-                  size="lg"
-                  borderRadius="lg"
-                  colorScheme="gray"
-                  leftIcon={<FaInfoCircle />}
-                  fontSize="sm"
-                  isFullWidth
-                  mb={3}
-                >
-                  Sobre Nós
-                </Button>
-              </Link>
               <Link href="/">
                 <Button
                   size="lg"
@@ -333,7 +320,7 @@ export default function HeaderApp() {
                   Fale Conosco
                 </Button>
               </Link>
-              <Link href="/comofunciona">
+              <Link href="/#comofunciona">
                 <Button
                   size="lg"
                   borderRadius="lg"
@@ -344,6 +331,19 @@ export default function HeaderApp() {
                   mb={3}
                 >
                   Como Funciona
+                </Button>
+              </Link>
+              <Link href="/#quemsomos">
+                <Button
+                  size="lg"
+                  borderRadius="lg"
+                  colorScheme="gray"
+                  leftIcon={<FaInfoCircle />}
+                  fontSize="sm"
+                  isFullWidth
+                  mb={3}
+                >
+                  Quem Somos
                 </Button>
               </Link>
             </DrawerBody>

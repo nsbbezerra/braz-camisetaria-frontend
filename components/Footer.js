@@ -24,11 +24,8 @@ import configs from "../configs/index";
 export default function FooterApp() {
   return (
     <>
-      <Link
-        href={`https://api.whatsapp.com/send?phone=5561991187898&text=${configs.general.message}`}
-        passHref
-      >
-        <a target={"_blank"}>
+      <Link href={"/whatsapp"} passHref>
+        <a>
           <IconButton
             colorScheme="green"
             aria-label="Call Segun"
@@ -107,7 +104,7 @@ export default function FooterApp() {
                 </Text>
               </Flex>
             </Link>
-            <Link href="/quemsomos">
+            <Link href="/#quemsomos">
               <Flex
                 align="center"
                 color="gray.200"
@@ -122,7 +119,7 @@ export default function FooterApp() {
               </Flex>
             </Link>
 
-            <Link href="/comofunciona">
+            <Link href="/#comofunciona">
               <Flex
                 align="center"
                 color="gray.200"
@@ -144,7 +141,7 @@ export default function FooterApp() {
             </Heading>
             <Flex mt={5}>
               <Link
-                href="https://www.instagram.com/palmieriuniformes/"
+                href="https://www.instagram.com/braz.multimidia/?hl=pt-br"
                 passHref
               >
                 <a target="_blank">
@@ -159,10 +156,7 @@ export default function FooterApp() {
                   />
                 </a>
               </Link>
-              <Link
-                href="https://www.facebook.com/Palmieri-Uniformes-2099607197005471/"
-                passHref
-              >
+              <Link href="https://www.facebook.com/brazmultimidia" passHref>
                 <a target="_blank">
                   <IconButton
                     aria-label="Search database"
@@ -181,11 +175,8 @@ export default function FooterApp() {
             <Heading color="blue.100" size="md" mb={5}>
               ATENDIMENTO
             </Heading>
-            <Link
-              href={`https://api.whatsapp.com/send?phone=5561991187898&text=${configs.general.message}`}
-              passHref
-            >
-              <a target="_blank">
+            <Link href={"/whatsapp"} passHref>
+              <a>
                 <Flex
                   align="center"
                   color="gray.200"

@@ -5,7 +5,7 @@ const customTheme = extendTheme({
   breakpoints: ["30em", "40em", "52em", "62em", "80em"],
   fonts: {
     body: "Noto Sans JP, system-ui, sans-serif",
-    heading: "Do Hyeon, sans-serif",
+    heading: "Gotham, sans-serif",
     mono: "Menlo, monospaced",
   },
   fontWeights: {

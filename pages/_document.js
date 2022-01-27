@@ -15,6 +15,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
             rel="stylesheet"
           />
+          <link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet" />
           <script
             dangerouslySetInnerHTML={{
               __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

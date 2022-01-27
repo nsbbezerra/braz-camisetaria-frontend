@@ -112,7 +112,12 @@ export default function Message() {
       <Box pt={5} pb={5}>
         <Container maxW="5xl">
           <Box textAlign="center">
-            <Heading color={"blue.500"}>ENTRE EM CONTATO</Heading>
+            <Heading
+              color={"blue.500"}
+              fontSize={["2xl", "3xl", "4xl", "4xl", "4xl"]}
+            >
+              ENTRE EM CONTATO
+            </Heading>
           </Box>
           <Grid
             templateColumns={["1fr", "1fr", "1fr", "1fr 1fr", "1fr 1fr"]}
@@ -193,11 +198,8 @@ export default function Message() {
                 </Text>
               </Center>
               <Center>
-                <Link
-                  href={`https://api.whatsapp.com/send?phone=5561991187898&text=${configs.general.message}`}
-                  passHref
-                >
-                  <a target="_blank" style={{ textDecoration: "none" }}>
+                <Link href={"/whatsapp"} passHref>
+                  <a style={{ textDecoration: "none" }}>
                     <Button
                       leftIcon={<RiWhatsappLine />}
                       colorScheme="green"

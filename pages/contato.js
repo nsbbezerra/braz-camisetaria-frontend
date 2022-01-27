@@ -30,17 +30,12 @@ export default function Contato() {
             objectFit="contain"
             width={1500}
             height={399}
-            quality={100}
           />
         </Box>
       </ContainerNonFixed>
 
       <Container maxW="5xl" mt={10} mb={10}>
-        <Breadcrumb
-          fontSize={"md"}
-          display={["none", "flex", "flex", "flex", "flex"]}
-          mb={10}
-        >
+        <Breadcrumb fontSize={"xs"} textTransform={"uppercase"} mb={10}>
           <BreadcrumbItem>
             <Link href="/" passHref>
               <BreadcrumbLink>início</BreadcrumbLink>
@@ -59,7 +54,12 @@ export default function Contato() {
 
         <Box borderWidth="1px" borderRadius="lg" p={3} mb={10}>
           <AspectRatio ratio={16 / 9}>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d585.8309283354702!2d-48.17393714785431!3d-8.973524737632859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9326856a0e7c0c19%3A0x1f4abd2a0ce1772d!2sPalmieri%20Uniformes!5e0!3m2!1spt-BR!2sbr!4v1594834485788!5m2!1spt-BR!2sbr"></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15350.058163681302!2d-48.0800549!3d-15.8820922!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2b78d6139019e60a!2sBraz%20Multim%C3%ADdia%20-%20Camiseteria!5e0!3m2!1spt-BR!2sbr!4v1643287585779!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="100%"
+              loading="lazy"
+            ></iframe>
           </AspectRatio>
         </Box>
 
