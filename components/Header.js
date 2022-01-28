@@ -85,8 +85,8 @@ export default function HeaderApp() {
               <Box h="50px" cursor="pointer">
                 <Link href="/">
                   <Image
-                    src="/img/icone.svg"
-                    width={50}
+                    src="/img/logo.svg"
+                    width={115}
                     height={50}
                     alt="Braz Multimídia"
                   />

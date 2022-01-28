@@ -2,14 +2,14 @@
 const { Client } = require("@notionhq/client");
 
 const notion = new Client({
-  auth: "secret_Pukn0gYBFduDU17k6ki4S0Zh0qJrLSVINvLnE8LM0Jo",
+  auth: "secret_rZqKbIlnVSfXQT371HU9PCNke0xwkwPHzhmn5s0285o",
 });
 
 export default async function SaveMessage(req, res) {
   await notion.pages
     .create({
       parent: {
-        database_id: "0375d8acb5c043f2803f2fa72ba9d3a6",
+        database_id: "5ee414c6677a41b189853fe5acddc033",
       },
       properties: {
         Nome: {
@@ -55,7 +55,6 @@ export default async function SaveMessage(req, res) {
       res.status(201).json({ message: "Mensagem enviada" });
     })
     .catch((error) => {
-      console.log(error);
       res.status(400).json({ message: "Erro ao enviar a mensagem" });
     });
 }
