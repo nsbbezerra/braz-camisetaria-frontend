@@ -15,7 +15,7 @@ const config = {
     bitrix:
       "https://palmieriuniformes.bitrix24.com.br/rest/1/0umu0cwegmu7d07h/",
     message: "Olá Braz Multimídia, vim pelo site",
-    phone: "5563985014015",
+    phone: "5561999116450",
     //urlApi: "http://localhost:21489",
     urlApi: "http://palmieriuniformes.nodejsng36f02.kinghost.net:21045",
   },

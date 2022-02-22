@@ -186,7 +186,7 @@ export default function FooterApp() {
                 >
                   <Icon as={FaWhatsapp} />
                   <Text ml={2} fontSize="sm">
-                    (61) 99118-7898
+                    (61) 99911-6450
                   </Text>
                 </Flex>
               </a>

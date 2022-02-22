@@ -69,7 +69,7 @@ export default function Contato() {
         <Flex align="center" mb={2}>
           <Icon as={FaWhatsapp} fontSize="2xl" />
           <Text ml={2} fontSize="xl">
-            (61) 99118-7898
+            (61) 99911-6450
           </Text>
         </Flex>
 

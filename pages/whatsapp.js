@@ -17,7 +17,7 @@ import Link from "next/link";
 export default function Whatsapp() {
   function goTo() {
     let a = document.createElement("a");
-    a.href = `https://api.whatsapp.com/send?phone=5561991187898&text=${configs.general.message}`;
+    a.href = `https://api.whatsapp.com/send?phone=556199116450&text=${configs.general.message}`;
     a.target = "blank";
     a.click();
   }
