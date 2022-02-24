@@ -13,18 +13,16 @@ import { useEffect } from "react";
 import configs from "../configs";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Whatsapp() {
-  function goTo() {
-    let a = document.createElement("a");
-    a.href = `https://api.whatsapp.com/send?phone=556199116450&text=${configs.general.message}`;
-    a.target = "blank";
-    a.click();
-  }
+  const { push } = useRouter();
 
   useEffect(() => {
     setTimeout(() => {
-      goTo();
+      push(
+        `https://api.whatsapp.com/send?phone=556199116450&text=${configs.general.message}`
+      );
     }, 2000);
   }, []);
 
@@ -54,7 +52,7 @@ export default function Whatsapp() {
             Se o Whatsapp não abrir automaticamente clique no botão abaixo
           </Text>
           <Link
-            href={`https://api.whatsapp.com/send?phone=5561991187898&text=${configs.general.message}`}
+            href={`https://api.whatsapp.com/send?phone=556199116450&text=${configs.general.message}`}
             passHref
           >
             <a target={"_blank"}>
